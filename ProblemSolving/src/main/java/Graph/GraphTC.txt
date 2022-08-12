@@ -1,0 +1,89 @@
+
+Graph (DFS, BFS, Multi-source DFS, Dijkstra, Topological Sorting, Kruskal, MST, Bipartite, Prims, DSU)
+-----------
+
+V = vertices
+E = edges
+
+DFS - TC=O(V + E) SC=O(h) h=maximum height of tree
+BFS - TC=O(V + E) SC=O(l) l=maximum number of nodes at a level 
+ToplogicalSort - TC= O(V + E) (bfs or dfs) 
+Bipartite - uses BFS - TC=O(V + E)
+DSU - TC=O(mlogn) m= no. of operations,    O(mn) without optimization 
+Dijkstra - O (V + ElogV).   O(n2)
+Kruskal - O(ELogV)
+Prim - O(V + ElogV) 
+Floyd Warshall - O(n3)
+Bellman ford - O(n2)  O(n3) for complete graph
+Graph Connected - O(V+E)
+
+BFS stands for Breadth First Search is a vertex-based technique for finding the shortest path in the graph.
+DFS stands for Depth First Search is an edge-based technique.
+
+The time complexity of both algorithms is the same. 
+But in the case of space complexity, if the maximum height is less than the maximum number of nodes in a single level, 
+then DFS will be more space optimised than BFS or vice versa.
+
+So if the problem involves finding the nearest neighbour or the shortest path, 
+BFS performs better — as in the case of DFS, leaf nodes are visited first.
+
+But in the case of solving a puzzle or topological sorting (i.e., cases where the result needs to be evaluated on reaching leaf nodes), 
+DFS performs better.
+
+1.	BFS stands for Breadth First Search.	
+	DFS stands for Depth First Search.
+2.	BFS(Breadth First Search) uses Queue data structure for finding the shortest path.	
+	DFS(Depth First Search) uses Stack data structure.
+3.	BFS can be used to find single source shortest path in an unweighted graph, because in BFS, we reach a vertex with minimum number of edges from a source vertex.	
+	In DFS, we might traverse through more edges to reach a destination vertex from a source.
+4.	BFS is more suitable for searching vertices which are closer to the given source.	
+	DFS is more suitable when there are solutions away from source.
+5.	BFS considers all neighbors first and therefore not suitable for decision making trees used in games or puzzles.	
+	DFS is more suitable for game or puzzle problems. We make a decision, then explore all paths through this decision. And if this decision leads to win situation, we stop.
+6.	The Time complexity of BFS is O(V + E) when Adjacency List is used and O(V^2) when Adjacency Matrix is used, where V stands for vertices and E stands for edges.	
+	The Time complexity of DFS is also O(V + E) when Adjacency List is used and O(V^2) when Adjacency Matrix is used, where V stands for vertices and E stands for edges.
+7.	BFS, siblings are visited before the children	
+	DFS, children are visited before the siblings
+8.	In BFS there is no concept of backtracking. 	
+	DFS algorithm is a recursive algorithm that uses the idea of backtracking
+9.	BFS is used in various application such as  bipartite graph, and shortest path etc.	
+	DFS is used in various application such as acyclic graph and topological order etc.
+10.	BFS requires more memory. 	
+	DFS requires less memory.
+
+Q #1) Does Dijkstra work for undirected graphs?
+Answer: If the graph is directed or undirected does not matter in the case of Dijkstra’s algorithm. 
+This algorithm is concerned only about the vertices in the graph and the weights.
+
+Q #2) What is the time complexity of Dijkstra’s algorithm?
+Answer: Time Complexity of Dijkstra’s Algorithm is O (V 2). 
+When implemented with the min-priority queue, the time complexity of this algorithm comes down to O (V + ElogV).
+
+Q #3) Is Dijkstra a greedy algorithm?
+Answer: Yes, Dijkstra is a greedy algorithm. 
+Similar to Prim’s algorithm of finding the minimum spanning tree (MST) these algorithms also start from a root vertex and 
+always chooses the most optimal vertex with the minimum path.
+
+Q #4) Is Dijkstra DFS or BFS?
+Answer: It is neither. But as Dijkstra’s algorithm uses a priority queue for its implementation, it can be viewed as close to BFS.
+
+Q #5) Where is the Dijkstra algorithm used?
+Answer: It is used mostly in routing protocols as it helps to find the shortest path from one node to another node.
+
+
+Bellman ford is for same application as Dijkstra but it can work for negative weight as well but fails for negative weight cycle
+
+The Floyd Warshall Algorithm is for solving the All Pairs Shortest Path problem. 
+The problem is to find shortest distances between every pair of vertices in a given weighted, directed & undirected Graph.
+
+Tree has v vertex and v-1 edges
+fully connected graph has n*n-1/2 edges
+
+why time complextiy for BFS is o(V + E)?
+Because the algorithm is to check each vertex and each edge once, 
+so you can say it is O(V+E) but as in the worst scenario  E≈max(Ei)×V  in a fully connected graph
+then you can always say  O(V+E)⊂O(V×E) 
+being  Θ(V+E) 
+the tighter bound complexity of BFS and  O(V×E)  the real upper bound limit
+
+

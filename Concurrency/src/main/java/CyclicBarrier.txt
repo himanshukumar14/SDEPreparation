@@ -1,0 +1,32 @@
+CyclicBarriers are synchronization constructs that were introduced with Java 5 as a part of the java.util.concurrent package.
+
+If we have a set of threads that communicate with each other and resemble one of the common patterns, 
+we can simply reuse the appropriate library classes (also called Synchronizers) instead of trying to come up with a 
+custom scheme using a set of locks and condition objects and the synchronized keyword.
+
+A CyclicBarrier is a synchronizer that allows a set of threads to wait for each other to reach a common execution point, also called a barrier.
+CyclicBarriers are used in programs in which we have a fixed number of threads that must wait for each other to reach a common point before 
+continuing execution.
+The barrier is called cyclic because it can be re-used after the waiting threads are released.
+
+The constructor for a CyclicBarrier is simple. 
+It takes a single integer that denotes the number of threads that need to call the await() 
+method on the barrier instance to signify reaching the common execution point:
+
+The threads that need to synchronize their execution are also called parties and calling 
+the await() method is how we can register that a certain thread has reached the barrier point.
+
+This call is synchronous and the thread calling this method suspends execution till a specified number of 
+threads have called the same method on the barrier. This situation where the required number of threads 
+have called await(), is called tripping the barrier.
+
+Optionally, we can pass the second argument to the constructor, which is a Runnable instance. 
+This has logic that would be run by the last thread that trips the barrier:
+
+
+There's an operation that a fixed number of threads perform and store the corresponding results in a list. 
+When all threads finish performing their action, one of them (typically the last one that trips the barrier) 
+starts processing the data that was fetched by each of these.
+
+Once the barrier is tripped, the last thread that tripped the barrier executes the logic 
+specified in the AggregatorThread, namely – add all the numbers produced by the threads.

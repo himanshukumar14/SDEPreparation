@@ -1,0 +1,2 @@
+https://kislayverma.com/programming/asynchronous-programming-a-cautionary-tale/
+https://kislayverma.com/programming/overcoming-io-overhead-in-micro-services/

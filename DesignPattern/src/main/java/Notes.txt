@@ -1,0 +1,8 @@
+1. Singleton (DB driver) - Creational
+2. Facade (building front view) - Structural
+3. Bridge/Connector (APIs) - Structural 
+4. Strategy ( notification to sales clients) - Behavioral
+5. Pub-Sub/Observer (event based)
+6. Decorator - Structural
+7. Factory - Creational
+8. Builder - Creational
