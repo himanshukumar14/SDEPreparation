@@ -3,7 +3,7 @@ package HotelManagement;
 import java.util.List;
 
 public class Room {
-	private String id;
+	private int id;
 	private RoomType roomType;
 	private RoomStatus roomStatus;
 	private double roomPrice;
@@ -15,7 +15,7 @@ public class Room {
 		this.roomPrice = roomPrice;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 

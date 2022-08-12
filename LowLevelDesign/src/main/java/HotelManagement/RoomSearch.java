@@ -6,7 +6,7 @@ public class RoomSearch implements Search<Room> {
 
 	@Override
 	public List<Room> search() {
-
+		return List.of();
 	}
 	
 }

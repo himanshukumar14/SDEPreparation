@@ -3,13 +3,12 @@ package ParkingLot;
 import java.util.List;
 
 public class ParkingFloor {
-	private String floorId;
-	private String name;
+	private String id;
 	private List<ParkingSpot> parkingSpots;
 	private int emptySpots;
 	
-	public ParkingFloor(String name) {
-		this.name = name;
+	public ParkingFloor(String id) {
+		this.id = id;
 	}
 	
 	public void addParkingSpots(ParkingSpot parkingSpot) {

@@ -1,7 +1,6 @@
 package ParkingLot;
 
 import java.util.List;
-import java.util.UUID;
 
 public class Parking {
     private String id;
@@ -10,25 +9,13 @@ public class Parking {
     private List<ParkingFloor> parkingFloors;
     private static Parking parking = null;
 
-    private Parking() {
-        id = UUID.randomUUID().toString();
-    }
-
-    public static Parking getInstance() {
-        if (parking == null) {
-            parking = new Parking();
-        }
-        return parking;
-    }
-
-    public Parking setName(String name) {
+    public Parking(String id, String name) {
+        this.id = id;
         this.name = name;
-        return this;
     }
 
-    public Parking setAddress(Location address) {
+    public void setAddress(Location address) {
         this.address = address;
-        return this;
     }
 
     public void addParkingFloor(ParkingFloor parkingFloor) {
