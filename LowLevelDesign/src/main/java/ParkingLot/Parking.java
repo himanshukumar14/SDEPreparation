@@ -3,6 +3,7 @@ package ParkingLot;
 import ParkingLot.Spot.ParkingSpot;
 import ParkingLot.Vehicle.Vehicle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parking {
@@ -10,11 +11,11 @@ public class Parking {
     private String name;
     private Location address;
     private List<ParkingFloor> parkingFloors;
-    private static Parking parking = null;
 
     public Parking(String id, String name) {
         this.id = id;
         this.name = name;
+        this.parkingFloors = new ArrayList<>();
     }
 
     public void setAddress(Location address) {
@@ -28,15 +29,15 @@ public class Parking {
     public boolean isFree(Vehicle vehicle) {
         for (ParkingFloor floor : parkingFloors) {
             for (ParkingSpot spot : floor.getParkingSpots()) {
-                if (vehicle.getType() == VehicleType.CAR && spot.isEmpty() && (spot.getParkingSpotType() == ParkingSpotType.LARGE || spot.getParkingSpotType() == ParkingSpotType.MEDIUM)) {
+                if (spot.isEmpty() && vehicle.getVehicleType() == VehicleType.CAR &&
+                        (spot.getParkingSpotType() == ParkingSpotType.LARGE || spot.getParkingSpotType() == ParkingSpotType.MEDIUM))
                     return true;
-                }
-                if (vehicle.getType() == VehicleType.BIKE && spot.isEmpty() && spot.getParkingSpotType() == ParkingSpotType.SMALL) {
+                if (spot.isEmpty() && vehicle.getVehicleType() == VehicleType.BIKE &&
+                        spot.getParkingSpotType() == ParkingSpotType.SMALL)
                     return true;
-                }
-                if (vehicle.getType() == VehicleType.CYCLE && spot.isEmpty() && spot.getParkingSpotType() == ParkingSpotType.SMALL) {
+                if (spot.isEmpty() && vehicle.getVehicleType() == VehicleType.CYCLE &&
+                        spot.getParkingSpotType() == ParkingSpotType.SMALL)
                     return true;
-                }
             }
         }
         return false;
@@ -51,18 +52,18 @@ public class Parking {
         return true;
     }
 
-    public ParkingSpot getParkingSpot(Vehicle vehicle) {
+    public ParkingSpot getFreeParkingSpot(Vehicle vehicle) {
         for (ParkingFloor floor : parkingFloors) {
             for (ParkingSpot spot : floor.getParkingSpots()) {
-                if (vehicle.getType() == VehicleType.CAR && spot.isEmpty() && (spot.getParkingSpotType() == ParkingSpotType.LARGE || spot.getParkingSpotType() == ParkingSpotType.MEDIUM)) {
+                if (spot.isEmpty() && vehicle.getVehicleType() == VehicleType.CAR &&
+                        (spot.getParkingSpotType() == ParkingSpotType.LARGE || spot.getParkingSpotType() == ParkingSpotType.MEDIUM))
                     return spot;
-                }
-                if (vehicle.getType() == VehicleType.BIKE && spot.isEmpty() && spot.getParkingSpotType() == ParkingSpotType.SMALL) {
+                if (spot.isEmpty() && vehicle.getVehicleType() == VehicleType.BIKE &&
+                        spot.getParkingSpotType() == ParkingSpotType.SMALL)
                     return spot;
-                }
-                if (vehicle.getType() == VehicleType.CYCLE && spot.isEmpty() && spot.getParkingSpotType() == ParkingSpotType.SMALL) {
+                if (spot.isEmpty() && vehicle.getVehicleType() == VehicleType.CYCLE &&
+                        spot.getParkingSpotType() == ParkingSpotType.SMALL)
                     return spot;
-                }
             }
         }
         return null;

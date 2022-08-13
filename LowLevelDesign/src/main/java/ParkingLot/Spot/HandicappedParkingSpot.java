@@ -4,7 +4,7 @@ import ParkingLot.ParkingSpotType;
 
 public class HandicappedParkingSpot extends ParkingSpot {
 
-    public HandicappedParkingSpot() {
-        super(ParkingSpotType.HANDICAPPED);
+    public HandicappedParkingSpot(String id) {
+        super(id, ParkingSpotType.HANDICAPPED);
     }
 }

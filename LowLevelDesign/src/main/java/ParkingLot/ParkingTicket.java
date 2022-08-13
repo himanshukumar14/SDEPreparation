@@ -1,8 +1,8 @@
 package ParkingLot;
 
 import ParkingLot.Spot.ParkingSpot;
-import ParkingLot.Vehicle.Vehicle;
 
+import java.util.Date;
 import java.util.UUID;
 
 public class ParkingTicket {
@@ -11,12 +11,10 @@ public class ParkingTicket {
     private ParkingTicketStatus status;
     private String exitTime;
     private ParkingSpot spot;
-    private Vehicle vehicle;
 
-    public ParkingTicket(String entryTime, Vehicle vehicle, ParkingSpot spot) {
+    public ParkingTicket(String entryTime, ParkingSpot spot) {
         this.id = UUID.randomUUID().toString();
         this.entryTime = entryTime;
-        this.vehicle = vehicle;
         this.spot = spot;
         this.status = ParkingTicketStatus.ACTIVE;
     }
@@ -41,12 +39,8 @@ public class ParkingTicket {
         return spot;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
-    }
-
     public void closeParkingTicket() {
-        this.exitTime = "";
+        this.exitTime = new Date().toString();
         this.status = ParkingTicketStatus.CLOSED;
     }
 

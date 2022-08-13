@@ -4,8 +4,8 @@ import ParkingLot.ParkingSpotType;
 
 public class SmallParkingSpot extends ParkingSpot {
 
-	public SmallParkingSpot() {
-		super(ParkingSpotType.SMALL);
+	public SmallParkingSpot(String id) {
+		super(id, ParkingSpotType.SMALL);
 	}
 
 }

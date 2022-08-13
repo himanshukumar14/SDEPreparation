@@ -3,6 +3,7 @@ package ParkingLot;
 import ParkingLot.Spot.*;
 import ParkingLot.Vehicle.Vehicle;
 
+import java.util.Date;
 import java.util.Map;
 
 public class ParkingService {
@@ -12,19 +13,32 @@ public class ParkingService {
 		this.parking = new Parking(id, name);
 	}
 	
-	public ParkingTicket bookParkingTicket(Vehicle vehicle) {
+	public ParkingTicket bookParking(Vehicle vehicle) {
 		if(parking.isFree(vehicle)) {
-			ParkingSpot spot = parking.getParkingSpot(vehicle);
+			ParkingSpot spot = parking.getFreeParkingSpot(vehicle);
 			spot.assignVehicle(vehicle);
-			return createParkingTicket(vehicle, spot);
+			return generateParkingTicket(vehicle, spot);
 		} else {
 			System.out.println("Parking is full");
 			return null;
 		}
 	}
 
-	public ParkingTicket createParkingTicket(Vehicle vehicle, ParkingSpot spot) {
-		return new ParkingTicket("", vehicle, spot);
+	private ParkingTicket generateParkingTicket(Vehicle vehicle, ParkingSpot spot) {
+		ParkingTicket ticket = new ParkingTicket(new Date().toString(), spot);
+		vehicle.setParkingTicket(ticket);
+		return ticket;
+	}
+
+	public ParkingTicket releaseParking(Vehicle vehicle) {
+		vehicle.getParkingTicket().getSpot().unAssignVehicle(vehicle);
+		return closeParkingTicket(vehicle);
+	}
+
+	private ParkingTicket closeParkingTicket(Vehicle vehicle) {
+		ParkingTicket ticket = vehicle.getParkingTicket();
+		ticket.closeParkingTicket();
+		return ticket;
 	}
 
 	public void setParkingAddress(Location address) {
@@ -43,14 +57,13 @@ public class ParkingService {
 		for(ParkingSpotType spotType : spotTypeCountMap.keySet()) {
 			for(int i = 1; i <= spotTypeCountMap.get(spotType); ++i) {
 				ParkingSpot spot = switch(spotType) {
-										case LARGE -> new LargeParkingSpot();
-										case SMALL -> new SmallParkingSpot();
-										case MEDIUM -> new MediumParkingSpot();
-										case HANDICAPPED -> new HandicappedParkingSpot();
+										case LARGE -> new LargeParkingSpot(floor.getId() + "-" + spotType.name() + "-" + i);
+										case SMALL -> new SmallParkingSpot(floor.getId() + "-" + spotType.name() + "-" + i);
+										case MEDIUM -> new MediumParkingSpot(floor.getId() + "-" + spotType.name() + "-" + i);
+										case HANDICAPPED -> new HandicappedParkingSpot(floor.getId() + "-" + spotType.name() + "-" + i);
 									};
 				floor.addParkingSpots(spot);
 			}
 		}
 	}
-
 }

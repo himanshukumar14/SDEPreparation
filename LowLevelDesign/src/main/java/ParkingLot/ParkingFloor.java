@@ -2,6 +2,7 @@ package ParkingLot;
 
 import ParkingLot.Spot.ParkingSpot;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ParkingFloor {
@@ -11,6 +12,11 @@ public class ParkingFloor {
 	
 	public ParkingFloor(String id) {
 		this.id = id;
+		this.parkingSpots = new ArrayList<>();
+	}
+
+	public String getId() {
+		return id;
 	}
 	
 	public void addParkingSpots(ParkingSpot parkingSpot) {
