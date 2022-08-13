@@ -1,5 +1,8 @@
 package ParkingLot;
 
+import ParkingLot.Spot.ParkingSpot;
+import ParkingLot.Vehicle.Vehicle;
+
 import java.util.List;
 
 public class Parking {

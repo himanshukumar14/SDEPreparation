@@ -1,7 +1,9 @@
 package ParkingLot;
 
+import ParkingLot.Vehicle.Car;
+import ParkingLot.Vehicle.Vehicle;
+
 import java.util.Map;
-import java.util.UUID;
 
 public class Client {
 	
@@ -17,6 +19,9 @@ public class Client {
 		Vehicle vehicle1 = new Car("KA 10 xyz", "swift");
 		Vehicle vehicle2 = new Car("KA 11 xyz", "baleno");
 		Vehicle vehicle3 = new Car("KA 12 xyz", "alto");
+
+		ParkingTicket ticket = parkingService.bookParkingTicket(vehicle1);
+
 
 	}
 	

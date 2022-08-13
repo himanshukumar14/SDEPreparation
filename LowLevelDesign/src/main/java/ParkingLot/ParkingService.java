@@ -1,5 +1,8 @@
 package ParkingLot;
 
+import ParkingLot.Spot.*;
+import ParkingLot.Vehicle.Vehicle;
+
 import java.util.Map;
 
 public class ParkingService {
@@ -9,13 +12,19 @@ public class ParkingService {
 		this.parking = new Parking(id, name);
 	}
 	
-	public void bookParkingTicket(Vehicle vehicle) {
+	public ParkingTicket bookParkingTicket(Vehicle vehicle) {
 		if(parking.isFree(vehicle)) {
 			ParkingSpot spot = parking.getParkingSpot(vehicle);
 			spot.assignVehicle(vehicle);
+			return createParkingTicket(vehicle, spot);
 		} else {
-			System.out.println("Parking is Full");
+			System.out.println("Parking is full");
+			return null;
 		}
+	}
+
+	public ParkingTicket createParkingTicket(Vehicle vehicle, ParkingSpot spot) {
+		return new ParkingTicket("", vehicle, spot);
 	}
 
 	public void setParkingAddress(Location address) {

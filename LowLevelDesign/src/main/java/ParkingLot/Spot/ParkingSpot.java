@@ -1,4 +1,7 @@
-package ParkingLot;
+package ParkingLot.Spot;
+
+import ParkingLot.ParkingSpotType;
+import ParkingLot.Vehicle.Vehicle;
 
 public abstract class ParkingSpot {
 	private Vehicle vehicle;

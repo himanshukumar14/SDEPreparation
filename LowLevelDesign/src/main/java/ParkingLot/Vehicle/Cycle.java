@@ -1,4 +1,6 @@
-package ParkingLot;
+package ParkingLot.Vehicle;
+
+import ParkingLot.VehicleType;
 
 public class Cycle extends Vehicle {
 

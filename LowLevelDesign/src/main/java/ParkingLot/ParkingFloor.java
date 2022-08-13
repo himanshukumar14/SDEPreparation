@@ -1,5 +1,7 @@
 package ParkingLot;
 
+import ParkingLot.Spot.ParkingSpot;
+
 import java.util.List;
 
 public class ParkingFloor {
