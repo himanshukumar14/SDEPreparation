@@ -1,0 +1,1 @@
+https://cloudflare.com/learning/performance/what-is-dns-load-balancing/

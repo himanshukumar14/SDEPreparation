@@ -1,0 +1,3 @@
+HTTP1 - head of line blocking
+HTTP2 - multiplexing packets
+HTTP3 - uses QUIC, transport over UDP

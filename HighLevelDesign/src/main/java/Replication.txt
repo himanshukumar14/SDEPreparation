@@ -1,0 +1,56 @@
+Replication means maintaining a copy of original data on multiple machines over the network to introduce redundancy.
+
+Why:
+1) To reduce latency - have machines in different geographical regions
+2) Increase availability
+3) Scaling on read responsible machines
+
+Problem:
+1) How to handle changes to replicated data.
+2) Replication Lag
+3) Eventual consistency
+
+Algorithm for replicating changes:
+1) Single Leader
+2) Multi Leader
+3) Leaderless
+
+Asynchronous Replication
+    - if asynchronous follower then we may see issues of inconsistency
+    - if leader crashes, any writes that were not saved on replica will be lost
+    - non-durable writes
+    - the system is quick, writes are faster, leader can continue taking writes even if followers are lagging behind
+    - used where there are a lot of followers
+
+Synchronous Replication
+    - writes are completed once the follower also has the copy of data being written
+    - advantage of follower being consistent with leader and has upto date data
+    - disadvantage that if follower crashes then writes are blocked and wait till the replica comes up
+    - generally only one follower is made synchronous out of multiple followers, an that way if one sync replica goes down other async replica is made sync
+
+Chain Replication
+    - async replication has the issue of losing the data
+    - variant of synchronous replication
+    - uses consensus based replication (getting several nodes to agree on a value)
+
+Adding new follower:
+    - Take a snapshot of db at some point in time
+    - copy snapshot to  new follower
+    - follower connects to leader and then uses CDC or replication log or transaction log
+        to request the data that needs to be pulled from the time snapshot was created (use log sequence number, a pointer in the log)
+
+Handle Node Outage:
+    Follower Failure: Catchup Recovery
+    Leader Failure: Failover
+
+Write Ahead Log (WAL):
+
+Replication Log:
+
+Read Your Own Write:
+
+Monotonic Reads:
+
+
+Change Data Capture( CDC )
+Handle failed replicas
