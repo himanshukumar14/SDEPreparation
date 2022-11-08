@@ -38,16 +38,17 @@ public class FindAPeakElement {
 		return l;
 	}
 
+	// my solution
 	public int solve(int[] A) {
 		int l = 0;
 		int r = A.length - 1;
 
 		while (l <= r) {
 			int mid = (l + r) / 2;
-			if ((mid == 0 && A[mid + 1] < A[mid]) || (mid == A.length - 1 && A[mid - 1] < A[mid]))
+			if ((mid == 0 && A[mid + 1] < A[mid]) || (mid == A.length - 1 && A[mid - 1] < A[mid]))  //cover edge case
 				return A[mid];
 			else {
-				if (A[mid - 1] <= A[mid] && A[mid] >= A[mid + 1]) {
+				if (A[mid - 1] <= A[mid] && A[mid] >= A[mid + 1]) {  // if the mid is peak
 					return A[mid];
 				} else if (A[mid] < A[mid - 1] && A[mid + 1] < A[mid]) {
 					r = mid - 1;

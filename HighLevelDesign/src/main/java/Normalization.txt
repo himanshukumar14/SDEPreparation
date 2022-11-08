@@ -1,0 +1,1 @@
+ the service now has to deal with denormalization’s perils, such as data inconsistency.

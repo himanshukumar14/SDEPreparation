@@ -1,14 +1,10 @@
 package MultiThreading;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class CallableExample {
 
-	public static void main(String[] args) throws InterruptedException, ExecutionException {
+	public static void main(String[] args) throws InterruptedException, ExecutionException, TimeoutException {
 		// TODO Auto-generated method stub
 		executeRunnableTask();
 		executeCallableTask();
@@ -21,12 +17,11 @@ public class CallableExample {
 		System.out.println(future.get());
 	}
 
-	public static void executeCallableTask() throws InterruptedException, ExecutionException {
-		FactorialTask task = new FactorialTask(5);
+	public static void executeCallableTask() throws InterruptedException, ExecutionException, TimeoutException {
 		ExecutorService executorService = Executors.newSingleThreadExecutor();
-		Future<Integer> future = executorService.submit(task);
+		Future<Integer> future = executorService.submit(new FactorialTask(5));
 		executorService.shutdown();
-		System.out.println(future.get().intValue());
+		System.out.println(future.get(10, TimeUnit.MILLISECONDS).intValue());
 	}
 
 }

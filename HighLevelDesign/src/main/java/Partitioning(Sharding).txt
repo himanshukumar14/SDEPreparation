@@ -1,0 +1,41 @@
+
+Partitioning Methods
+------------------------
+
+Horizontal Partitioning
+Vertical Partitioning - data is distributed in columnar fashion
+Directory-Based Partitioning - create a lookup service that knows your current partitioning scheme and abstracts it away
+                               from the DB access code. So, to find out where a particular data entity resides,
+                               we query the directory server that holds the mapping between each tuple key to its
+                               DB server. This loosely coupled approach means we can perform tasks like adding servers
+                               to the DB pool or changing our partitioning scheme without having an impact on the application.
+
+Partitioning Criteria
+-------------------------
+
+Key or Hash-based Partitioning
+List partitioning
+Round-robin partitioning
+Composite Partitioning
+
+Common Problems of Partitioning
+----------------------------------
+
+1) Joins and Denormalization - Performing joins on a database that is running on one server is straightforward,
+                               but once a database is partitioned and spread across multiple machines it is often not
+                               feasible to perform joins that span database partitions. Such joins will not be performance
+                               efficient since data has to be compiled from multiple servers.
+                               A common workaround for this problem is to denormalize the database so that queries that
+                               previously required joins can be performed from a single table. Of course, the service
+                               now has to deal with denormalization’s perils, such as data inconsistency.
+
+2) Referential integrity - trying to enforce data integrity constraints such as foreign keys in a partitioned database can be extremely difficult.
+3) Rebalancing - we need rebalancing because,
+                        - The data distribution is not uniform
+                        - There is a lot of load on a single partition
+                 we have to create more DB partitions or have to rebalance existing partitions,
+                 which means the partitioning scheme changed and all existing data moved to new locations.
+                 Doing this without incurring downtime is extremely difficult.
+                 Using a scheme like directory-based Partitioning does make rebalancing a more palatable experience
+                 at the cost of increasing the complexity of the system and creating a new
+                 single point of failure (i.e. the lookup service/database).

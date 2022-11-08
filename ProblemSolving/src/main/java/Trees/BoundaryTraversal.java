@@ -4,18 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-class TreeNode {
-	TreeNode left;
-	TreeNode right;
-	int val;
-
-	TreeNode(int val) {
-		this.left = null;
-		this.right = null;
-		this.val = val;
-	}
-}
-
 public class BoundaryTraversal {
 
 	public static void main(String[] args) {
@@ -60,5 +48,17 @@ public class BoundaryTraversal {
 			bottomBoundaryTraversal(root.left);
 		if (root.right != null)
 			bottomBoundaryTraversal(root.right);
+	}
+
+	class TreeNode {
+		TreeNode left;
+		TreeNode right;
+		int val;
+
+		TreeNode(int val) {
+			this.left = null;
+			this.right = null;
+			this.val = val;
+		}
 	}
 }

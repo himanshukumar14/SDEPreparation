@@ -36,7 +36,7 @@ public class DisjointSetUnion {
 	 * The idea is to flatten the tree when find() is called. When find() is called
 	 * for an element x, root of the tree is returned. The find() operation
 	 * traverses up from x to find root. The idea of path compression is to make the
-	 * found root as parent of x so that we don’t have to traverse all intermediate
+	 * found root as parent of x so that we donï¿½t have to traverse all intermediate
 	 * nodes again. If x is root of a subtree, then path (to root) from all nodes
 	 * under x also compresses.
 	 */

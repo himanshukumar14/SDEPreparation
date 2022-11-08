@@ -1,0 +1,22 @@
+
+SQL
+-------
+
+No SQL
+--------
+Key-Value Stores
+Document Databases
+Wide-Column Databases
+Graph Databases
+
+High Level Difference
+-------------------------
+Storage
+Schema
+Querying
+Scalability
+Reliability or ACID Compliancy (Atomicity, Consistency, Isolation, Durability)
+
+
+We need to ensure ACID compliance. ACID compliance reduces anomalies and protects the integrity of your database by prescribing exactly how transactions interact with the database. Generally, NoSQL databases sacrifice ACID compliance for scalability and processing speed, but for many e-commerce and financial applications, an ACID-compliant database remains the preferred option.
+Your data is structured and unchanging. If your business is not experiencing massive growth that would require more servers and if you’re only working with data that is consistent, then there may be no reason to use a system designed to support a variety of data types and high traffic volume.

@@ -35,7 +35,7 @@ public class CloneGraph {
 			label = x;
 			neighbors = new ArrayList<UndirectedGraphNode>();
 		}
-	};
+	}
 
 	public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 		return dfs(node);
