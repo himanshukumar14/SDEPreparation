@@ -7,7 +7,7 @@ public class NodeJustGreaterThanGivenNodeBST {
 
 	}
 
-	// with space
+	// with space //doing inorder traversal and finding next greater
 	public static TreeNode nextGreater(TreeNode a, int b) {
 		Stack<TreeNode> st = new Stack<TreeNode>();
 		TreeNode cur = a;
@@ -26,7 +26,7 @@ public class NodeJustGreaterThanGivenNodeBST {
 		return null;
 	}
 
-	// without space
+	// without space //mostly uses morris traversal
 	public TreeNode getSuccessor(TreeNode a, int b) {
 		if (a == null)
 			return null;

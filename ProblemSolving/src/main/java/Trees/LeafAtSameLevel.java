@@ -37,7 +37,7 @@ public class LeafAtSameLevel {
 
 	}
 
-	public boolean checkLeaf(TreeNode root, int level, int leafLevel) {
+	public boolean checkLeaf(TreeNode root, int level, Integer leafLevel) {
 		if (root == null)
 			return true;
 		if(root.left == null && root.right == null) {

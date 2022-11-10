@@ -31,11 +31,9 @@ public class MirrorImageOfTree {
 			return true;
 		if (A == null || B == null)
 			return false;
-
 		boolean left = isMirror(A.left, B.right);
 		boolean right = isMirror(A.right, B.left);
-
-		return left && right && A.val == B.val;
+		return A.val == B.val && left && right;
 	}
 
 	static class TreeNode {

@@ -22,6 +22,7 @@ public class CountCompleteTreeNodes {
 
 	}
 
+	// binary search solution
 //	public int countNodes(TreeNode root) {
 //		if (root == null)
 //			return 0;
@@ -58,6 +59,9 @@ public class CountCompleteTreeNodes {
 //			return (1 << (height - 1)) + countLastLevel(root.right, height - 1);
 //	}
 
+	//-------------------------------------------------------------------
+
+	//recursive solution
 	public int countNodes(TreeNode root) {
 
 		int leftDepth = leftDepth(root);
@@ -87,6 +91,18 @@ public class CountCompleteTreeNodes {
 			dep++;
 		}
 		return dep;
+	}
+
+	class TreeNode {
+		TreeNode left;
+		TreeNode right;
+		int val;
+
+		TreeNode(int val) {
+			this.left = null;
+			this.right = null;
+			this.val = val;
+		}
 	}
 
 }

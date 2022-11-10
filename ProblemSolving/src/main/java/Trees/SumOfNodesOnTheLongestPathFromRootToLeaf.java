@@ -2,7 +2,8 @@ package Trees;
 
 /**
  * 
- * Given a binary tree of size N. Your task is to complete the function sumOfLongRootToLeafPath(), that find the sum of all nodes on the longest path from root to leaf node.
+ * Given a binary tree of size N. Your task is to complete the function sumOfLongRootToLeafPath(),
+ * that find the sum of all nodes on the longest path from root to leaf node.
 If two or more paths compete for the longest path, then the path having maximum sum of nodes is being considered.
 
 Example 1:
@@ -60,5 +61,17 @@ public class SumOfNodesOnTheLongestPathFromRootToLeaf {
 			 curr[1] = right[1] + root.val;
 		}
 		return curr;
+	}
+
+	class TreeNode {
+		TreeNode left;
+		TreeNode right;
+		int val;
+
+		TreeNode(int val) {
+			this.left = null;
+			this.right = null;
+			this.val = val;
+		}
 	}
 }

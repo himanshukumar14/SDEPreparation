@@ -28,15 +28,24 @@ public class KthSmallestElementInTree {
     }
     
     public int getsize(TreeNode root) {
-        if(root == null) {
+        if(root == null)
             return 0;
-        }
-        
         int left = getsize(root.left);
         int right = getsize(root.right);
-
         m.put(root, left + right + 1);        
         return left + right + 1;
+    }
+
+    class TreeNode {
+        TreeNode left;
+        TreeNode right;
+        int val;
+
+        TreeNode(int val) {
+            this.left = null;
+            this.right = null;
+            this.val = val;
+        }
     }
 
 }

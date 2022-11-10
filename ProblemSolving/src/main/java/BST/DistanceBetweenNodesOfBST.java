@@ -24,10 +24,8 @@ public class DistanceBetweenNodesOfBST {
 	}
 
 	public int findDis(TreeNode root, int A) {
-		if (root == null) {
+		if (root == null)
 			return 0;
-		}
-
 		if (root.val < A)
 			return findDis(root.right, A) + 1;
 		else if (root.val > A)

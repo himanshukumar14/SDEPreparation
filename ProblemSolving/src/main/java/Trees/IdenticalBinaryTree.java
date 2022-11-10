@@ -7,6 +7,20 @@ public class IdenticalBinaryTree {
 			return true;
 		if (A == null || B == null)
 			return false;
-		return A.val == B.val && isSameTree(A.left, B.left) && isSameTree(A.right, B.right);
+		boolean left = isSameTree(A.left, B.left);
+		boolean right = isSameTree(A.right, B.right);
+		return A.val == B.val && left && right;
+	}
+
+	class TreeNode {
+		TreeNode left;
+		TreeNode right;
+		int val;
+
+		TreeNode(int val) {
+			this.left = null;
+			this.right = null;
+			this.val = val;
+		}
 	}
 }
