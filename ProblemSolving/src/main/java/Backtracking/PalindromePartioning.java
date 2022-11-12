@@ -34,7 +34,7 @@ public class PalindromePartioning {
 
 	public void recur(String s, int n, int index, List<String> l) {
 		if (index == n) {
-			ans.add(new ArrayList<String>(l));
+			ans.add(new ArrayList<>(l));
 			return;
 		}
 		for (int i = index; i < n; ++i) {

@@ -44,9 +44,9 @@ public class AnagramOfString {
 			System.out.println(str);
 		else {
 			for (int i = l; i <= r; i++) {
-				str = swap(str, l, i);
+				str = swap(str, l, i); //swap two chars
 				permute(str, l + 1, r);
-				str = swap(str, l, i);
+				str = swap(str, l, i); //reverse swap previously swapped chars
 			}
 		}
 	}

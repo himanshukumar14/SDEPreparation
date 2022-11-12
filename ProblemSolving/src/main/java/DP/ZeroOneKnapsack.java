@@ -15,7 +15,7 @@ package DP;
  * 
  * NOTE:
  * 
- * You cannot break an item, either pick the complete item, or don’t pick it
+ * You cannot break an item, either pick the complete item, or donï¿½t pick it
  * (0-1 property).
  *
  */
@@ -61,4 +61,5 @@ public class ZeroOneKnapsack {
 		return dp[(flag % 2)][capacity];
 	}
 
+	// track the items selected
 }
