@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * 
- * The N Queen is the problem of placing N chess queens on an N×N chessboard so
+ * The N Queen is the problem of placing N chess queens on an NxN chessboard so
  * that no two queens attack each other. For example, following is a solution
  * for 4 Queen problem.
  */
@@ -31,7 +31,7 @@ public class NQueen {
 	public void findQueens(int r, int n, int[] col) {
 		if (r == n) {
 			ArrayList<String> l = createSol(col);
-			queens.add(new ArrayList<String>(l));
+			queens.add(new ArrayList<>(l));
 			return;
 		}
 		for (int i = 0; i < n; ++i) {
