@@ -37,14 +37,9 @@ public class FlattenLinkedlist {
 
 	// TC = O (N * M * logN)
 	public ListNode flatten2(ListNode root) {
-		PriorityQueue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
-			@Override
-			public int compare(ListNode a, ListNode b) {
-				return a.val - b.val;
-			}
-		});
+		PriorityQueue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
 		if (root == null)
-			return root;
+			return null;
 		ListNode result = new ListNode(-1);
 		ListNode temp = result;
 		pq.add(root);

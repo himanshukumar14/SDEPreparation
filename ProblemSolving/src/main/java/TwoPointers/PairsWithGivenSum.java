@@ -65,7 +65,7 @@ public class PairsWithGivenSum {
 
 	public int solve(int[] A, int B) {
 		int n = A.length;
-		Map<Integer, Integer> m = new HashMap<Integer, Integer>();
+		Map<Integer, Integer> m = new HashMap<>();
 		long count = 0;
 
 		for (int i = 0; i < n; ++i) {

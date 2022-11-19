@@ -13,7 +13,7 @@ package Array;
  * 
  * Output: 3
  * 
- * Explanation: There are two consecutive 1’s and three consecutive 1’s in the
+ * Explanation: There are two consecutive 1's and three consecutive 1's in the
  * array out of which maximum is 3.
  * 
  * Input: prices = {1, 0, 1, 1, 0, 1}
@@ -32,6 +32,7 @@ public class CountMaximumConsecutiveOneInArray {
 		System.out.println(countOnes(arr));
 	}
 
+	// kadane's logic
 	public static int countOnes(int[] arr) {
 		int n = arr.length;
 		int max = 0;

@@ -16,9 +16,9 @@ import java.util.List;
  * tree is the sum of weights given to each edge of the spanning tree.
  * 
  * How many edges does a minimum spanning tree has? A minimum spanning tree has
- * (V – 1) edges where V is the number of vertices in the given graph.
+ * (V  1) edges where V is the number of vertices in the given graph.
  * 
- * Applications: Network design. – telephone, electrical, hydraulic, TV cable,
+ * Applications: Network design. telephone, electrical, hydraulic, TV cable,
  * computer, road
  *
  */

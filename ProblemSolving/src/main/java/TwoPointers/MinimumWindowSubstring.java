@@ -93,11 +93,10 @@ public class MinimumWindowSubstring {
 					ans[2] = r;
 				}
 				char cb = s.charAt(l);
-				count.put(cb, count.getOrDefault(cb, 0) - 1);
-
-				if (dict.containsKey(cb) && count.get(cb).intValue() < dict.get(cb).intValue()) {
+				if (dict.containsKey(cb) && count.get(cb).intValue() == dict.get(cb).intValue()) {
 					formed--;
 				}
+				count.put(cb, count.getOrDefault(cb, 0) - 1);
 				l++;
 			}
 			r++;

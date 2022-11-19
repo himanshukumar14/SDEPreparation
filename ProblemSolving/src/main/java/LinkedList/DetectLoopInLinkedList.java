@@ -2,23 +2,29 @@ package LinkedList;
 
 /**
  * 
- * Solution 3: Floyd’s Cycle-Finding Algorithm Approach: This is the fastest
+ * Solution 3: Floyd's Cycle-Finding Algorithm Approach: This is the fastest
  * method and has been described below:
  * 
  * Traverse linked list using two pointers. Move one pointer(slow_p) by one and
  * another pointer(fast_p) by two. If these pointers meet at the same node then
- * there is a loop. If pointers do not meet then linked list doesn’t have a
+ * there is a loop. If pointers do not meet then linked list doesn't have a
  * loop.
  */
 
 /**
- * The algorithm is to start two pointers, slow and fast from head of linked list. We move slow one node at a time and fast two nodes at a time. If there is a loop, then they will definitely meet. This approach works because of the following facts.
+ * The algorithm is to start two pointers, slow and fast from head of linked list. We move slow one node at a time
+ * and fast two nodes at a time. If there is a loop, then they will definitely meet. This approach works because of the following facts.
 
 1) When slow pointer enters the loop, the fast pointer must be inside the loop. Let fast pointer be distance k from slow.
 
-2) Now if consider movements of slow and fast pointers, we can notice that distance between them (from slow to fast) increase by one after every iteration. After one iteration (of slow = next of slow and fast = next of next of fast), distance between slow and fast becomes k+1, after two iterations, k+2, and so on. When distance becomes n, they meet because they are moving in a cycle of length n.
+2) Now if consider movements of slow and fast pointers, we can notice that distance between them (from slow to fast)
 
-For example, we can see in below diagram, initial distance is 2. After one iteration, distance becomes 3, after 2 iterations, it becomes 4. After 3 iterations, it becomes 5 which is distance 0. And they meet.
+ increase by one after every iteration. After one iteration (of slow = next of slow and fast = next of next of fast),
+ distance between slow and fast becomes k+1, after two iterations, k+2, and so on. When distance becomes n,
+ they meet because they are moving in a cycle of length n.
+
+For example, we can see in below diagram, initial distance is 2. After one iteration, distance becomes 3,
+ after 2 iterations, it becomes 4. After 3 iterations, it becomes 5 which is distance 0. And they meet.
  */
 
 /**

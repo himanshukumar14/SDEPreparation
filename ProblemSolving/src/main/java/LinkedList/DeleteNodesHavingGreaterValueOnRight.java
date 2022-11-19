@@ -53,7 +53,7 @@ public class DeleteNodesHavingGreaterValueOnRight {
 	public static ListNode reverse(ListNode head) {
 		ListNode prev = null;
 		ListNode curr = head;
-		ListNode next = head;
+		ListNode next;
 
 		while (curr != null) {
 			next = curr.next;

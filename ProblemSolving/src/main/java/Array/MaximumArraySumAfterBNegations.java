@@ -66,9 +66,9 @@ public class MaximumArraySumAfterBNegations {
 		while (B > 0) {
 			A[i] = -1 * A[i];
 			if (i < n && A[i + 1] < 0) {
-				++i;
+				i++;
 			} else if (A[i] > A[i + 1]) {
-				++i;
+				i++;
 			}
 			B--;
 		}

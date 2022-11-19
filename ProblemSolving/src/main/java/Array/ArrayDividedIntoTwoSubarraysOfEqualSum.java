@@ -2,7 +2,7 @@ package Array;
 
 /**
  * 
- * Given an array of integers, find if it’s possible to remove exactly one
+ * Given an array of integers, find if it's possible to remove exactly one
  * integer from the array that divides the array into two subarrays with the
  * same sum. Examples:
  * 

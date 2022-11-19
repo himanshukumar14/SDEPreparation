@@ -12,7 +12,7 @@ import java.util.Comparator;
  * 
  * Example:
  * 
- * Example 1 : Consider the following 3 activities sorted by by finish time.
+ * Example 1 : Consider the following 3 activities sorted by finish time.
  * start[] = {10, 12, 20}; finish[] = {20, 25, 30}; A person can perform at most
  * two activities. The maximum set of activities that can be executed is {0, 2}
  * [ These are indexes in start[] and finish[] ]
@@ -51,9 +51,7 @@ public class IntervalScheduling {
 		});
 
 		int i = 0;
-
 		for (int j = 1; j < n; j++) {
-
 			if (arr[j].start >= arr[i].finish) {
 				System.out.print("(" + arr[j].start + ", " + arr[j].finish + "), ");
 				i = j;

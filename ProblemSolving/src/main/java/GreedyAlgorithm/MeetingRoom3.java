@@ -54,7 +54,6 @@ public class MeetingRoom3 {
 		int count = 1;
 		int j = 0;
 		for (int i = 1; i < n; ++i) {
-
 			if (m[j].end < m[i].start) {
 				count++;
 				j = i;

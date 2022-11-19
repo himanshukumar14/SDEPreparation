@@ -6,7 +6,7 @@ import java.util.Arrays;
  * 
  * Amazon is hosting a team hackathon.
  * 
- * Each team will have exactly teamSize developers. A developer’s skill level is
+ * Each team will have exactly teamSize developers. A developerï¿½s skill level is
  * denoted by skill[i]. The difference between the maximum and minimum skill
  * levels within a team cannot exceed a threshold, maxDiff. Determine the
  * maximum number of teams that can be formed from the contestants. Example
@@ -21,7 +21,7 @@ import java.util.Arrays;
  * 
  * countMaximumTeams has the following parameter(s):
  * 
- * int skill[n]: the developers’ skill levels int teamSize: the number of
+ * int skill[n]: the developers skill levels int teamSize: the number of
  * developers to make up a team int maxDiff: the threshold value Returns:
  * 
  * int: the maximum number of teams that can be formed at one time

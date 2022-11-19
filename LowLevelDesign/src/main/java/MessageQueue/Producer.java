@@ -1,8 +1,6 @@
 package MessageQueue;
 
-public abstract class Producer<T> {
-    private String id;
-
-    abstract void publish(T payload);
+public interface Producer {
+    boolean addToMessageQueue(Message message);
 
 }

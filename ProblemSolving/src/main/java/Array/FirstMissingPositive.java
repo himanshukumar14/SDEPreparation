@@ -16,8 +16,6 @@ public class FirstMissingPositive {
 	}
 
 	/**
-	 * 
-	 * 
 	 * Put each number in its right place.
 	 * 
 	 * For example:

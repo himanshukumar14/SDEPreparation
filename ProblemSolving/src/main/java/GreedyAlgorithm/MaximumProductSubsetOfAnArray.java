@@ -23,7 +23,7 @@ public class MaximumProductSubsetOfAnArray {
 
 	}
 
-	public static int maxProductSubset(int a[], int n) {
+	public static int maxProductSubset(int[] a, int n) {
 		if (n == 1) {
 			return a[0];
 		}
