@@ -28,5 +28,4 @@ public class FindTwoNonRepeatingElement {
 		// print the the two unique numbers
 		System.out.println("The non-repeating elements are " + sum1 + " and " + sum2);
 	}
-
 }

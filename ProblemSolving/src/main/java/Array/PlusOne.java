@@ -17,6 +17,7 @@ public class PlusOne {
 			if (r == 0) {
 				int[] temp = new int[digits.length + 1];
 				temp[0] = 1;
+				//copy digit to temp
 				return temp;
 			}
 			digits[r] = 0;

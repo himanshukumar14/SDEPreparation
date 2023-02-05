@@ -12,7 +12,7 @@ public class BoxStacking {
 
 	}
 
-	public int stackBoxes(int[][] boxes) { // l,w,h l should be strictly greater than w
+	public int stackBoxes(int[][] boxes) { // l,w,h     l should be strictly greater than w
 		List<Box> possibleBoxes = new ArrayList<>();
 		int n = boxes.length;
 		for (int i = 0; i < n; ++i) {

@@ -1,6 +1,5 @@
 package MessageQueue;
 
 public interface Producer {
-    boolean addToMessageQueue(Message message);
-
+    boolean publishMessage(Message message) throws InterruptedException;
 }

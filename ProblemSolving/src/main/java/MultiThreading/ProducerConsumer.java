@@ -4,11 +4,11 @@ package MultiThreading;
  * synchronization problem. The problem describes two processes, the producer and the consumer, 
  * which share a common, fixed-size buffer used as a queue.
 
-The producer’s job is to generate data, put it into the buffer, and start again.
+The producerï¿½s job is to generate data, put it into the buffer, and start again.
 At the same time, the consumer is consuming the data (i.e. removing it from the buffer), one piece at a time.
 Problem
-To make sure that the producer won’t try to add data into the buffer if it’s full and that the consumer 
-won’t try to remove data from an empty buffer.
+To make sure that the producer wonï¿½t try to add data into the buffer if itï¿½s full and that the consumer 
+wonï¿½t try to remove data from an empty buffer.
 
 Solution
 The producer is to either go to sleep or discard data if the buffer is full. The next time the consumer 
@@ -33,6 +33,9 @@ class CustomQueue {
 	boolean valueSet = false;
 
 	public synchronized void put(int num) {
+		synchronized() {
+
+		}
 		while (valueSet) {
 			try {
 				wait();

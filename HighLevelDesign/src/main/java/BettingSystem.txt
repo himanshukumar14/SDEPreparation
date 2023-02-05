@@ -1,0 +1,45 @@
+https://leetcode.com/discuss/interview-question/system-design/792060/bidding-system-system-design-interview
+
+Design a bidding system where:
+------------------------------
+- User's can post any item for auction/bidding at any time
+- Bidders can bid on any existing item any number of times
+- 10M new auction items are added everyday & 100M new bids come in every day
+- User wins an item if there are no higher bids in the next 1hour
+- User has to pay for the item within 10 mins of winning the item
+- User's can only bid for 1 count of an item at a time.
+   - Example: If there are 10 cars in the system, user's can only bid on 1 car at a time.
+
+Functional Requirements:
+------------------------
+- Users should be able to put items up for auction
+- Bidder's should be able to search for items they are interested in.
+- Bidders should be able to bid on items they are interestes in.
+
+Non Functional Requirements:
+----------------------------
+- Low Latency
+- High Availability
+- Highly consistent
+    - The bidding part should be highly consistent. Bidders shouldn't be able to bid on unavailable items
+    - New items can take some time before they become available for bidders to bid upon
+
+** Estimation: **
+-----------------
+- Read heavy traffic
+- Traffic:![](../../../../../../AppData/Local/Temp/f84384a6-7214-4953-9e35-2adc384b9826_1597436717.0431437.png)
+    - 10M new items added every day
+    - 100M requests to bid on these items
+- Storage:
+    - 10M new items/objects each day. If each objects needs ~1KB of space to be stored then it would take 10M * 1KB = 10GB of data each day
+
+API:
+----
+- Users who want to list new items for auction:
+    - putItem(string userId, string itemCategory, int totalQuantity, string description)
+    - POST /api/v1/bid?
+        JSON: {userId: "", itemCategory: "", totalQuantity: "", description:""}
+- Users who want to bid for an item:
+    - bidItem(string userId, string itemId, int quantity, int maxBid}
+    - POST /api/v1/bid?
+        JSON {userId: "", itemId: "", totalQuantity: "", maxBid: ""}

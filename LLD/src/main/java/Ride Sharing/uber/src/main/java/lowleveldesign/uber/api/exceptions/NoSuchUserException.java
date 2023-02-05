@@ -1,0 +1,5 @@
+public class NoSuchUserException extends APIException {
+    public NoSuchUserException(String errorMessage) {
+        super(errorMessage);
+    }
+}

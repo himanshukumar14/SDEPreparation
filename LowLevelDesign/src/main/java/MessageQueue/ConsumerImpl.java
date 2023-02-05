@@ -18,4 +18,8 @@ public abstract class ConsumerImpl implements Consumer {
     public void deregister() {
         messageQueueService.removeSubscriber(regex, this);
     }
+
+    public void consumeMessage() {
+        messageQueueService.getMessageFromQueue(this);
+    }
 }

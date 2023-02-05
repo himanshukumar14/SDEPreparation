@@ -1,3 +1,5 @@
+package Common;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -43,7 +45,7 @@ public class Arcesium {
 			} else if(key[1].equals("geo")) {
 				if(key[2].equals("lat")) {
 					return user.getAddress().getGeo().getLat();
-				} else if(key[1].equals("lng")) {
+				} else if(key[2].equals("lng")) {
 					return user.getAddress().getGeo().getLng();
 				}
 			}
@@ -77,6 +79,8 @@ public class Arcesium {
 			if(val.equals(value))
 				ans.add(user[i].getId());
 		}
+		if(ans.size() == 0)
+			ans.add(-1);
 		return ans;
 	}
 
@@ -90,6 +94,8 @@ public class Arcesium {
 					ans.add(user[i].getId());
 			}
 		}
+		if(ans.size() == 0)
+			ans.add(-1);
 		return ans;
 	}
 
