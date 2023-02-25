@@ -34,12 +34,10 @@ public class SubSetSum {
 
 		for (int i = 1; i <= n; i++) {
 			for (int j = 1; j <= sum; j++) {
-				if (i >= set[j - 1])
-					subset[i][j] = subset[i - 1][j] || subset[i - 1][j - set[i - 1]]; // include current number or donot
-																						// include whichever is true
+				if (j >= set[i - 1])
+					subset[i][j] = subset[i - 1][j] || subset[i - 1][j - set[i - 1]]; // include current number or donot																// include whichever is true
 				else
 					subset[i][j] = subset[i - 1][j]; // donot include current number
-
 			}
 		}
 		return subset[n][sum];
