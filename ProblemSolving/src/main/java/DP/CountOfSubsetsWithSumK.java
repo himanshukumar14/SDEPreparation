@@ -27,11 +27,11 @@ public class CountOfSubsetsWithSumK {
 			tab[i][0] = 1; // we can form a zero sum by not selecting any element in the subset
 
 		for (int i = 1; i <= n; i++) {
-			for (int j = 0; j <= sum; j++) {
+			for (int j = 1; j <= sum; j++) {
 				if (j - a[i - 1] >= 0) {
-					tab[i][j] = tab[i - 1][j] + tab[i - 1][j - a[i - 1]];
+					tab[i][j] = tab[i - 1][j] + tab[i - 1][j - a[i - 1]]; // include or donot include
 				} else {
-					tab[i][j] = tab[i - 1][j];
+					tab[i][j] = tab[i - 1][j]; // donot include
 				}
 			}
 		}
